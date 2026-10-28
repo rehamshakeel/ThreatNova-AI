@@ -200,9 +200,9 @@ app = FastAPI(
 
 # Configure Cross-Origin Resource Sharing (CORS) for Next.js frontend
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=settings.CORS_ORIGINS,
-    allow_credentials=True,
+CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
