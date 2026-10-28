@@ -1,0 +1,29 @@
+# Python byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local Database & Secrets
+*.db
+*.sqlite
+*.sqlite3
+threatnova.db
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db

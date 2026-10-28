@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/* ── ThreatNova AI Design Tokens ── */
+:root {
+  --tn-bg:      #080808;
+  --tn-surface: #171717;
+  --tn-card:    #171717;
+  --tn-border:  #292929;
+  --tn-muted:   #8E8E8E;
+  --tn-text:    #F2F2F2;
+  --tn-danger:  #EF4444;
+  --tn-warn:    #EF4444;
+  --tn-success: #F2F2F2;
+  --tn-info:    #D4D4D4;
+}
+
+@theme inline {
+  --color-background: var(--tn-bg);
+  --color-foreground: var(--tn-text);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Palette shortcuts for Tailwind utilities */
+  --color-tn-bg:      var(--tn-bg);
+  --color-tn-surface: var(--tn-surface);
+  --color-tn-card:    var(--tn-card);
+  --color-tn-border:  var(--tn-border);
+  --color-tn-muted:   var(--tn-muted);
+  --color-tn-text:    var(--tn-text);
+  --color-tn-danger:  var(--tn-danger);
+  --color-tn-warn:    var(--tn-warn);
+  --color-tn-success: var(--tn-success);
+  --color-tn-info:    var(--tn-info);
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--tn-bg);
+}
+
+body {
+  color: var(--tn-text);
+  font-family: var(--font-geist-sans, Arial, Helvetica, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--tn-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--tn-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tn-muted);
+}
+
+/* ── Focus ring ── */
+:focus-visible {
+  outline: 2px solid var(--tn-danger);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Transitions ── */
+* {
+  transition-property: color, background-color, border-color, opacity, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+}
+
+html[data-density="compact"] table th,
+html[data-density="compact"] table td {
+  padding-block: 0.5rem;
+}
+
+html[data-reduce-motion="true"] *,
+html[data-reduce-motion="true"] *::before,
+html[data-reduce-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0.01ms !important;
+}
