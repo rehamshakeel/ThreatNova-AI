@@ -142,7 +142,7 @@ function ScanningCore() {
   useEffect(() => {
     let isCancelled = false;
     createInvestigation(target, detectedType)
-      .then((backendInv) => {
+      .then((backendInv) => {.catch(err => console.error("Handled:", err));
         if (!isCancelled && backendInv) {
           saveInvestigation(backendInv);
         }
